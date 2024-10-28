@@ -4,7 +4,7 @@ export class Enemy{
         this.height = height
         this.x = x
         this.y = y
-
+        this.speed = 5
     }
     draw (container) {
         const enemy = document.createElement('div')
@@ -15,8 +15,16 @@ export class Enemy{
         enemy.style.top = `${this.y}px`;
         container.appendChild(enemy)
     }
-    update(container) {
-        this.x++
+    update() {
+        console.log(this.x, this.x+this.width)
+        if (this.x + this.width >= 1000 || this.x < 0){
+            this.y += 5
+            this.speed *= -1;
+            this.x += this.speed
+        } else {
+            this.x += this.speed;
+            
+        }
     }
 }
 
