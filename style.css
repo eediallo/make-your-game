@@ -4,15 +4,38 @@
     box-sizing: border-box;
 }
 
-#container {
-    width: 1000px;
-    height: 500px;
-    border: 1px blue solid;
-    position: relative;
+body, html {
+    background-color: black;
+    height: 99%;
+    text-align: center;
     
 }
 
+body {
+    display: grid;
+    grid-template-rows: 75px 1fr;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    font-family: audiowide;
+    color: lime;
+    font-size: 50px;
+    height: fit-content;
+    align-self: baseline;
+}
+
+#container {
+    width: 1000px;
+    height: 500px;
+    border: 3px lime solid;
+    position: relative;
+}
+
 .enemy {
-    background: black;
+    background: lime;
+    border: 2px white solid;
     position: absolute;
 }
