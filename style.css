@@ -1,0 +1,18 @@
+:root {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 1000px;
+    height: 500px;
+    border: 1px blue solid;
+    position: relative;
+    
+}
+
+.enemy {
+    background: black;
+    position: absolute;
+}
