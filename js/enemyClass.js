@@ -13,4 +13,9 @@ class enemy {
 const newEnemy = new enemy(23, 59)
 
 
+function draw(){
+    
+}
+
+
 console.log(newEnemy)
