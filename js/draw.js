@@ -1,4 +1,3 @@
-
 const enemyContainerElement = document.querySelector(".enemy-container");
 
 function draw(container, enemyInstance) {
