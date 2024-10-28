@@ -1,5 +1,5 @@
 class enemy {
-  constructor(width, height, x = 0, y = 0) {
+  constructor(width, height, x = 0, y = 0, color, line) {
     this.width = width;
     this.height = height;
     this.x = x;
@@ -7,11 +7,11 @@ class enemy {
   }
 }
 
-const newEnemy = new enemy(23, 59);
+const newEnemy = new enemy(50, 50);
 
 function draw(container, enemyInstance) {
     const bodyElement = document.body
-    container.classList.add("enemy-container");
+    container.classList.add("enemy");
     container.style.width = `${enemyInstance.width}px`;
     container.style.height = `${enemyInstance.height}px`;
 
