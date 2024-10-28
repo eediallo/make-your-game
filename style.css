@@ -1,0 +1,8 @@
+body {
+    background-color: #444;
+}
+
+.enemy {
+    border: solid 3px white;
+    background-color: green;
+}
