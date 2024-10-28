@@ -9,6 +9,7 @@ class enemy {
 
 const newEnemy = new enemy(50, 50, 15, 15);
 
+//============draw================================================
 function draw(container, enemyInstance) {
   const enemyContainer = document.querySelector(".enemy-container");
   container.classList.add("enemy");
@@ -24,13 +25,14 @@ function draw(container, enemyInstance) {
 const enemyElement = document.createElement("div");
 draw(enemyElement, newEnemy);
 
+//===============update======================
 function update() {
   newEnemy.x++;
   enemyElement.style.left = `${newEnemy.x}px`;
 }
 
+//==========Set interval==========
 setInterval(update, 10);
 
+// call update
 update();
-
-console.log(newEnemy);
