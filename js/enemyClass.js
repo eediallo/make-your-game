@@ -1,10 +1,13 @@
 export class Enemy{
     constructor(width, height, x=0, y=0) {
-        this.width = width
-        this.height = height
-        this.x = x
-        this.y = y
-        this.speed = 5
+        this.width = width;
+        this.height = height;
+        this.x = x;
+        this.y = y;
+        this.speed = 5;
+        this.leftEdge = false;
+        this.rightEdge = false;
+        this.direction = ''
     }
     draw (container) {
         const enemy = document.createElement('div')
@@ -15,16 +18,25 @@ export class Enemy{
         enemy.style.top = `${this.y}px`;
         container.appendChild(enemy)
     }
-    update() {
-        console.log(this.x, this.x+this.width)
-        if (this.x + this.width >= 1000 || this.x < 0){
-            this.y += 5
-            this.speed *= -1;
-            this.x += this.speed
-        } else {
-            this.x += this.speed;
-            
+    update(gameSpeed) {
+        if (this.direction == 'left') {
+            gameSpeed *= -1
         }
+        this.x += gameSpeed
+        if (this.x + this.width >= 1000){
+            this.direction = 'left'
+            this.y += 5;
+            
+        } else if (this.x <= 0){
+            this.direction = 'right'
+            this.y += 5
+            gameSpeed *= -1
+            this.x += 2*gameSpeed
+        }
+        
+        
+        
+        
     }
 }
 
