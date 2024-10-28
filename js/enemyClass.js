@@ -4,6 +4,7 @@ export class Enemy{
         this.height = height
         this.x = x
         this.y = y
+
     }
     draw (container) {
         const enemy = document.createElement('div')
@@ -13,6 +14,9 @@ export class Enemy{
         enemy.style.left = `${this.x}px`;
         enemy.style.top = `${this.y}px`;
         container.appendChild(enemy)
+    }
+    update(container) {
+        this.x++
     }
 }
 
