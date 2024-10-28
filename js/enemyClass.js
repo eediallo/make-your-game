@@ -10,12 +10,12 @@ class enemy {
 const newEnemy = new enemy(50, 50);
 
 function draw(container, enemyInstance) {
-    const bodyElement = document.body
+    const enemyContainer = document.querySelector('.enemy-container')
     container.classList.add("enemy");
     container.style.width = `${enemyInstance.width}px`;
     container.style.height = `${enemyInstance.height}px`;
 
-    bodyElement.append(container);
+    enemyContainer.append(container);
 }
 
 draw(document.createElement("div"), newEnemy);
