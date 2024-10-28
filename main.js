@@ -3,8 +3,9 @@ let enemies = [];
 let enemiesPerRow = 11;
 let gameSpeed = 1;
 let rowHeight = 0;
+let enemySize = 50
 for (let i = 0; i < enemiesPerRow; i++){
-    enemies.push(new Enemy(50, 50, i*50 + i*10));
+    enemies.push(new Enemy(enemySize, enemySize, i*enemySize + i*10));
 }
 const container = document.getElementById('container')
 let direction = 'right'
