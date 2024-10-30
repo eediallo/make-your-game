@@ -28,14 +28,13 @@ h1 {
 }
 
 #container {
-    width: 1000px;
-    height: 500px;
+    width: 1034px;
+    height: 576px;
     border: 3px lime solid;
     position: relative;
 }
 
 .enemy {
-    background: lime;
-    border: 2px white solid;
+    border: 2px lime solid;
     position: absolute;
 }

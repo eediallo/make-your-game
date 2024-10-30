@@ -3,7 +3,7 @@ let enemies = [];
 let enemiesPerRow = 11;
 let gameSpeed = 1;
 let rowHeight = 0;
-let enemySize = 50
+let enemySize = 64
 for (let i = 0; i < enemiesPerRow; i++){
     enemies.push(new Enemy(enemySize, enemySize, i*enemySize + i*10));
 }

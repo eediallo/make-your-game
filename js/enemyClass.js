@@ -8,6 +8,7 @@ export class Enemy{
         this.leftEdge = false;
         this.rightEdge = false;
         this.direction = ''
+        this.image = './assets/SpriteSheet.png'
     }
     draw (container) {
         const enemy = document.createElement('div')
@@ -16,6 +17,8 @@ export class Enemy{
         enemy.style.height = `${this.height}px`;
         enemy.style.left = `${this.x}px`;
         enemy.style.top = `${this.y}px`;
+        enemy.style.background = `url(${this.image})`;
+        // enemy.style.
         container.appendChild(enemy)
     }
     update(gameSpeed) {
