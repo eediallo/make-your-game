@@ -1,5 +1,5 @@
 export class Enemy{
-    constructor(width, height, x=0, y=0) {
+    constructor(width, height, x=0, y=0, row) {
         this.width = width;
         this.height = height;
         this.x = x;
@@ -9,6 +9,7 @@ export class Enemy{
         this.rightEdge = false;
         this.direction = ''
         this.image = './assets/SpriteSheet.png'
+        this.row = row;
     }
     draw (container) {
         const enemy = document.createElement('div')
