@@ -2,6 +2,13 @@ body {
     background-color: #444;
 }
 
+.game-container{
+    margin: 100px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .enemy-container {
     margin: 0 auto;
     max-width: 1300px;
