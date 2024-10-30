@@ -2,17 +2,23 @@ body {
     background-color: #444;
 }
 
-.game-container{
+.game-container {
     margin: 100px;
     display: flex;
     justify-content: space-between;
 
 }
 
-h1, h2{
+h1,
+h2 {
     font-weight: bold;
     font-size: 30px;
     color: hsl(0, 7%, 83%);
+}
+
+p {
+    color: hsl(0, 7%, 83%);
+    font-size: 18px;
 }
 
 .enemy-container {
