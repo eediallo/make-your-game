@@ -1,6 +1,6 @@
 import { enemyContainerElement } from "./config.js";
 import { Enemy } from "./enemyClass.js";
-import { draw } from "./drawEnemies.js";
+import { drawEnemies } from "./drawEnemies.js";
 import { enemyContainer } from "./config.js";
 
 const enemies = [];
@@ -24,7 +24,7 @@ function createEnemies() {
       enemies.push(enemy);
 
       const enemyElement = document.createElement("div");
-      draw(enemyElement, enemy, row * totalEnemiesInRow + i);
+      drawEnemies(enemyElement, enemy, row * totalEnemiesInRow + i);
       enemyContainerElement.appendChild(enemyElement); // Add the enemy to the container
     }
   }
