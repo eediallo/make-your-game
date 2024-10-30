@@ -34,8 +34,10 @@ p {
 
 .enemy {
     border: solid 3px white;
-    background-color: green;
     position: absolute;
+    background-image: url("./assets/images/space-invader.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #start-btn {
