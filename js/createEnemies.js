@@ -1,6 +1,6 @@
 import { enemyContainerElement } from "./config.js";
 import { Enemy } from "./enemyClass.js";
-import { draw } from "./draw.js";
+import { draw } from "./drawEnemies.js";
 import { enemyContainer } from "./config.js";
 
 const enemies = [];
