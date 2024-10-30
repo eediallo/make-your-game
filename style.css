@@ -32,3 +32,15 @@ p {
     background-color: green;
     position: absolute;
 }
+
+#start-btn {
+    display: block;
+    width: 100;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 18px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+}
