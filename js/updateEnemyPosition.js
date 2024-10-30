@@ -1,4 +1,4 @@
-import { enemies } from "./config.js";
+import { enemies } from "./createEnemies.js";
 import { enemyContainer } from "./config.js";
 
 export function updateEnemyPositions() {
@@ -9,7 +9,6 @@ export function updateEnemyPositions() {
       enemy.x++;
     }
 
-    // Reverse direction if an enemy hits container bounds
     if (enemy.x >= enemyContainer.width - enemy.width) {
       enemy.x = enemyContainer.width - enemy.width;
       enemy.direction = "left";
@@ -20,7 +19,10 @@ export function updateEnemyPositions() {
 
     // Update the enemy element’s position in the DOM
     const enemyElement = document.querySelector(`.enemy-${index}`);
-    enemyElement.style.left = `${enemy.x}px`;
+    if (enemyElement) {
+      enemyElement.style.left = `${enemy.x}px`;
+    } else {
+      console.warn(`Enemy element .enemy-${index} not found in the DOM.`);
+    }
   });
 }
-
