@@ -1,4 +1,3 @@
-
 class EnemyContainer {
   constructor(width, height, color, line, lineWidth) {
     this.width = width;
