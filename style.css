@@ -33,7 +33,7 @@ p {
 }
 
 .enemy {
-    border: solid 3px white;
+    /* border: solid 3px white; */
     position: absolute;
     background-image: url("./assets/images/space-invader.svg");
     background-size: contain;
