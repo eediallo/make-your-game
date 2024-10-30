@@ -6,17 +6,17 @@ import { enemyContainer } from "./config.js";
 const enemies = [];
 
 function createEnemies() {
-  enemyContainerElement.innerHTML = ""; // Clear any existing enemies in the container
+  enemyContainerElement.innerHTML = ""; 
   let y = 0;
   const spacing = enemyContainer.width / 12; // Divide the width to create even horizontal spacing
 
   for (let i = 0; i < 11; i++) {
     const x = spacing * i; // Place each enemy with equal horizontal spacing
-    const enemy = new Enemy(50, 50, x, y); // Create an enemy with fixed y and spaced x positions
+    const enemy = new Enemy(50, 50, x, y);
     enemies.push(enemy);
 
     const enemyElement = document.createElement("div");
-    draw(enemyElement, enemy, i); // Pass index to create a unique class for each enemy
+    draw(enemyElement, enemy, i); // i creates a unique class for each enemy
   }
 }
 
