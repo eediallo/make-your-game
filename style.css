@@ -9,6 +9,12 @@ body {
 
 }
 
+h1, h2{
+    font-weight: bold;
+    font-size: 30px;
+    color: hsl(0, 7%, 83%);
+}
+
 .enemy-container {
     margin: 0 auto;
     max-width: 1300px;
