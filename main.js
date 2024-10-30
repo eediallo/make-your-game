@@ -1,8 +1,10 @@
-import { draw } from "./js/draw.js";
-import { updateEnemyPosition } from "./js/updateEnemyPosition.js";
-import { enemyElement } from "./js/config.js";
-import { newEnemy } from "./js/config.js";
 
-draw(enemyElement, newEnemy);
-updateEnemyPosition();
-setInterval(updateEnemyPosition, 10);
+import { updateEnemyPositions } from "./js/updateEnemyPosition.js";
+import { createEnemies } from "./js/config.js";
+import { enemies, enemyContainerElement } from "./js/config.js";
+
+//Create 11 enemies and draw them initially
+createEnemies();
+
+// Continuously update the positions of all enemies
+setInterval(updateEnemyPositions, 10);
