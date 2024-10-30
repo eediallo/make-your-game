@@ -11,8 +11,5 @@ function drawPlayer() {
   playerElement.style.bottom = `${newPlayer.y}px`; // Set the initial y position
 
   enemyContainerElement.append(playerElement);
-  return playerElement;
 }
-
-console.log(drawPlayer());
 export { drawPlayer };
