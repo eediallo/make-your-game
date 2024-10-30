@@ -1,8 +1,5 @@
-
 import { updateEnemyPositions } from "./js/updateEnemyPosition.js";
-import { createEnemies } from "./js/config.js";
-import { enemies, enemyContainerElement } from "./js/config.js";
-
+import { createEnemies } from "./js/createEnemies.js";
 //Create 11 enemies and draw them initially
 createEnemies();
 
