@@ -1,12 +1,5 @@
 class Enemy {
-  constructor(
-    width,
-    height,
-    x = 0,
-    y = 0,
-    color = "black",
-    direction = "right"
-  ) {
+  constructor(width, height, x = 0, y = 0, color = "", direction = "right") {
     this.width = width;
     this.height = height;
     this.x = x;
