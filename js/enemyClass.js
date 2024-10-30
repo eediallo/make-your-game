@@ -12,8 +12,7 @@ class Enemy {
     this.x = x;
     this.y = y;
     this.color = color;
-    this.direction = direction; // track movement direction
+    this.direction = direction; // Track movement direction
   }
 }
-
 export { Enemy };
