@@ -7,9 +7,8 @@ createEnemies();
 // setInterval(updateEnemyPositions, 10);
 
 function animate() {
-    
-    updateEnemyPositions()
-    requestAnimationFrame(animate)
+  updateEnemyPositions();
+  requestAnimationFrame(animate);
 }
 
-animate()
+animate();
