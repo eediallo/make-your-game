@@ -1,6 +1,6 @@
 import { enemyContainerElement } from "./config.js";
 
-function draw(container, enemyInstance, index) {
+function drawEnemies(container, enemyInstance, index) {
   container.classList.add(`enemy`, `enemy-${index}`);
   container.style.width = `${enemyInstance.width}px`;
   container.style.height = `${enemyInstance.height}px`;
@@ -13,4 +13,4 @@ function draw(container, enemyInstance, index) {
   enemyContainerElement.append(container);
 }
 
-export { draw };
+export { drawEnemies };
