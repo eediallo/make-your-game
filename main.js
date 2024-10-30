@@ -4,4 +4,12 @@ import { createEnemies } from "./js/createEnemies.js";
 createEnemies();
 
 // Continuously update the positions of all enemies
-setInterval(updateEnemyPositions, 10);
+// setInterval(updateEnemyPositions, 10);
+
+function animate() {
+    
+    updateEnemyPositions()
+    requestAnimationFrame(animate)
+}
+
+animate()
