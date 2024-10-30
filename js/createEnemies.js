@@ -7,7 +7,7 @@ const enemies = [];
 
 function createEnemies() {
   enemyContainerElement.innerHTML = ""; // Clear any existing enemies in the container
-  const y = 0;
+  let y = 0;
   const spacing = enemyContainer.width / 12; // Divide the width to create even horizontal spacing
 
   for (let i = 0; i < 11; i++) {
