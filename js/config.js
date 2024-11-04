@@ -4,6 +4,6 @@ import { Player } from "./playerClass.js";
 const enemyContainer = new EnemyContainer(1200, 600, "white", 2, "solid");
 const enemyContainerElement = document.querySelector(".enemy-container");
 enemyContainer.applyStyles(enemyContainerElement);
-const newPlayer = new Player(100, 100, 50, 0);
+const newPlayer = new Player(100, 100, 50, -50);
 
 export { enemyContainer, enemyContainerElement, newPlayer };
