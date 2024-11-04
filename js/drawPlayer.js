@@ -8,8 +8,7 @@ function drawPlayer() {
   playerElement.style.height = `${newPlayer.height}px`;
   playerElement.style.position = "absolute"; // Ensure the player is positioned absolutely
   playerElement.style.left = `${newPlayer.x}%`; // Set the initial x position
-  playerElement.style.transform = `translateX(${newPlayer.y}px)`; // Set the initial y position
-  playerElement.style.bottom = 0;
+  playerElement.style.bottom = `${newPlayer.y}px`; // Set the initial y position
 
   enemyContainerElement.append(playerElement);
 }
