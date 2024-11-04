@@ -36,8 +36,7 @@ export function updateEnemyPositions() {
     //----Update the enemy element’s position in the DOM----------------
     const enemyElement = document.querySelector(`.enemy-${index}`);
     if (enemyElement) {
-      enemyElement.style.left = `${enemy.x}px`;
-      enemyElement.style.top = `${enemy.y}px`;
+      enemyElement.style.transform = `translate(${enemy.x}px, ${enemy.y}px)`;
     }
   });
 }
