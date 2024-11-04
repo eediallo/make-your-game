@@ -5,8 +5,8 @@ function drawEnemies(container, enemyInstance, index) {
   container.style.width = `${enemyInstance.width}px`;
   container.style.height = `${enemyInstance.height}px`;
   container.style.position = "absolute";
-  container.style.left = `${enemyInstance.x}px`; // Set horizontal position
-  container.style.top = `${enemyInstance.y}px`; // Set vertical position
+  container.style.transform = `translate(${enemyInstance.x}px, 0)`; // Set horizontal position
+  container.style.transform = `translate(0, ${enemyInstance.y}px)`; // Set vertical position
   container.style.backgroundColor = enemyInstance.color;
 
   // Append the enemy to the enemy container
