@@ -1,9 +1,7 @@
 import { updateEnemyPositions } from "./js/updateEnemyPosition.js";
 import { createEnemies } from "./js/createEnemies.js";
-import { drawPlayer } from "./js/drawPlayer.js";
-//Create 11 enemies and draw them initially
-createEnemies();
-drawPlayer();
+
+createEnemies(); //Create 11 enemies and draw them initially
 function animate() {
   updateEnemyPositions();
   requestAnimationFrame(animate);
