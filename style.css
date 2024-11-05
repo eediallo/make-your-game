@@ -30,6 +30,7 @@ p {
     margin: 0 auto;
     max-width: 1300px;
     position: relative;
+    overflow: hidden;
 }
 
 .enemy {
