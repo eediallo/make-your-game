@@ -1,15 +1,9 @@
 import { newPlayer } from "./config.js";
-import { drawPlayer } from "./drawPlayer.js";
-
-drawPlayer(); // Allow access to player element
-
-const player = document.querySelector(".player");
-const playerContainer = document.querySelector(".enemy-container");
-let posX = newPlayer.x;
-let posY = newPlayer.y;
-const step = 10;
 
 function movePlayer(event) {
+  const player = document.querySelector(".player");
+  const playerContainer = document.querySelector(".enemy-container");
+  const step = 10;
   const playerRect = player.getBoundingClientRect();
   const playerContainerRect = playerContainer.getBoundingClientRect();
 
@@ -18,7 +12,7 @@ function movePlayer(event) {
     event.key === "ArrowLeft" &&
     playerRect.left - step >= playerContainerRect.left
   ) {
-    posX -= step;
+    newPlayer.x -= step;
     updatePlayerPosition();
   }
 
@@ -27,13 +21,14 @@ function movePlayer(event) {
     event.key === "ArrowRight" &&
     playerRect.right + step <= playerContainerRect.right
   ) {
-    posX += step;
+    newPlayer.x += step;
     updatePlayerPosition();
   }
 }
 
 function updatePlayerPosition() {
-  player.style.transform = `translate(${posX}px, ${posY}px)`;
+  const player = document.querySelector(".player");
+  player.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
 }
 
-document.addEventListener("keydown", movePlayer);
+export { movePlayer };
