@@ -1,4 +1,5 @@
 import { newPlayer } from "./config.js";
+import { updateBulletPosition } from "./createBullet.js";
 
 function movePlayer(event) {
   const player = document.querySelector(".player");
@@ -29,6 +30,9 @@ function movePlayer(event) {
 function updatePlayerPosition() {
   const player = document.querySelector(".player");
   player.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
+
+  // update bullet
+  updateBulletPosition();
 }
 
 export { movePlayer };
