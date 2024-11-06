@@ -1,4 +1,3 @@
-import { moveBulletUpwards } from "./shootBullet.js";
 import { newPlayer } from "./config.js";
 
 class Bullet {
