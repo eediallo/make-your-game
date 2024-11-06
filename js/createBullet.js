@@ -33,8 +33,14 @@ function createBullet(event) {
 }
 
 function updateBulletPosition() {
-  const bullet = document.querySelector(".bullet");
-  bullet.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
+  if (newBullet.activeBullet) {
+    const bullet = document.querySelector(".bullet");
+    bullet.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
+  } else {
+    createBullet();
+    const bullet = document.querySelector(".bullet");
+    bullet.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
+  }
 }
 
 export { createBullet, newBullet, updateBulletPosition };
