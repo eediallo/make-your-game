@@ -6,11 +6,10 @@ import { createBullet } from "./js/createBullet.js";
 
 createEnemies();
 drawPlayer();
+createBullet();
 
 // Event listener to move the player
 document.addEventListener("keydown", movePlayer);
-
-createBullet();
 
 function animate() {
   updateEnemyPositions();
