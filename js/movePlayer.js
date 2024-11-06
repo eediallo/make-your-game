@@ -1,5 +1,6 @@
 import { newPlayer } from "./config.js";
 import { updateBulletPosition } from "./createBullet.js";
+import { shootBullet } from "./shootBullet.js";
 
 function movePlayer(event) {
   const player = document.querySelector(".player");
@@ -25,6 +26,8 @@ function movePlayer(event) {
     newPlayer.x += step;
     updatePlayerPosition();
   }
+
+  shootBullet();
 }
 
 function updatePlayerPosition() {
