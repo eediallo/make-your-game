@@ -11,8 +11,7 @@ createBullet();
 
 // Event listener to move the player
 document.addEventListener("keydown", movePlayer);
-// Event listener to shoot the bullet when space is pressed
-document.addEventListener("keydown", shootBullet);
+shootBullet();
 function animate() {
   updateEnemyPositions();
   requestAnimationFrame(animate);
