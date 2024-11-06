@@ -37,7 +37,7 @@ function updateBulletPosition() {
     const bullet = document.querySelector(".bullet");
     bullet.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
   } else {
-    createBullet();
+    createBullet(); // create bullet if it does not exist
     const bullet = document.querySelector(".bullet");
     bullet.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
   }
