@@ -8,10 +8,9 @@ import { shootBullet } from "./js/shootBullet.js";
 createEnemies();
 drawPlayer();
 createBullet();
-
-// Event listener to move the player
-document.addEventListener("keydown", movePlayer);
+document.addEventListener("keydown", movePlayer); // Event listener to move the player
 shootBullet();
+
 function animate() {
   updateEnemyPositions();
   requestAnimationFrame(animate);
