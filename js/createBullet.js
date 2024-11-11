@@ -11,7 +11,7 @@ class Bullet {
   }
 }
 
-const newBullet = new Bullet(10, 10, 20, 0, 0);
+const newBullet = new Bullet(20, 20, 20, 0, 0);
 
 function createBullet(event) {
   if (newBullet.activeBullet) return; // Prevent creating multiple bullets
@@ -25,7 +25,7 @@ function createBullet(event) {
   bullet.style.width = `${newBullet.width}px`;
   bullet.style.height = `${newBullet.height}px`;
   bullet.style.position = "absolute";
-  bullet.style.backgroundColor = "red";
+  // bullet.style.backgroundColor = "red";
   bullet.style.left = `${playerLeft}px`;
   bullet.style.top = `${playerTop}px`;
   document.querySelector(".enemy-container").appendChild(bullet);
