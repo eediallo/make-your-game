@@ -7,7 +7,6 @@ import { shootBullet } from "./js/shootBullet.js";
 
 createEnemies();
 drawPlayer();
-createBullet();
 document.addEventListener("keydown", movePlayer); // Event listener to move the player
 shootBullet();
 
