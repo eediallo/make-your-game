@@ -41,6 +41,12 @@ p {
     background-repeat: no-repeat;
 }
 
+.bullet {
+    background-image: url("./assets/images/bullet-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 #start-btn {
     display: block;
     width: 100;
