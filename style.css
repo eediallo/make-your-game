@@ -40,7 +40,6 @@ p {
 }
 
 .bullet {
-    position: absolute;
     background-image: url("./assets/images/bullet-icon.png");
     background-size: contain;
     background-repeat: no-repeat;
