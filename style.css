@@ -34,14 +34,13 @@ p {
 }
 
 .enemy {
-    /* border: solid 3px white; */
-    position: absolute;
     background-image: url("./assets/images/space-invader.svg");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .bullet {
+    position: absolute;
     background-image: url("./assets/images/bullet-icon.png");
     background-size: contain;
     background-repeat: no-repeat;
