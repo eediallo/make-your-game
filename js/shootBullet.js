@@ -5,7 +5,6 @@ function shootBullet() {
   document.addEventListener("keydown", (event) => {
     const bullet = document.querySelector(".bullet");
     if (event.key === " ") {
-      createBullet();
       moveBulletUpwards(bullet);
     }
   });
