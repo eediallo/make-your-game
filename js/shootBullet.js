@@ -13,5 +13,4 @@ function shootBullet() {
     }
   });
 }
-
 export { shootBullet };
