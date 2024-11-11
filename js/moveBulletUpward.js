@@ -2,6 +2,8 @@ import { newBullet } from "./createBullet.js";
 
 // Move the bullet upwards until it reaches the top of the container
 function moveBulletUpwards(bullet) {
+  if (!bullet) return; // Ensure bullet is not null
+
   const containerRect = document
     .querySelector(".enemy-container")
     .getBoundingClientRect();

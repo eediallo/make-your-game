@@ -1,4 +1,5 @@
 import { newPlayer } from "./config.js";
+import { updateBulletPosition } from "./updateBulletPosition.js";
 
 class Bullet {
   constructor(width, height, bulletSpeed, x, y) {
@@ -30,17 +31,7 @@ function createBullet(event) {
   bullet.style.top = `${playerTop}px`;
   document.querySelector(".enemy-container").appendChild(bullet);
   newBullet.activeBullet = bullet; // Track the active bullet
+  updateBulletPosition();
 }
 
-function updateBulletPosition() {
-  if (newBullet.activeBullet) {
-    const bullet = document.querySelector(".bullet");
-    bullet.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
-  } else {
-    createBullet(); // create bullet if it does not exist
-    const bullet = document.querySelector(".bullet");
-    bullet.style.transform = `translate(${newPlayer.x}px, ${newPlayer.y}px)`;
-  }
-}
-
-export { createBullet, newBullet, updateBulletPosition };
+export { createBullet, newBullet };

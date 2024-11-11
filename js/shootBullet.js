@@ -1,11 +1,14 @@
 import { createBullet } from "./createBullet.js";
 import { moveBulletUpwards } from "./moveBulletUpward.js";
+import { updateBulletPosition } from "./updateBulletPosition.js";
 
 function shootBullet() {
   document.addEventListener("keydown", (event) => {
-    const bullet = document.querySelector(".bullet");
     if (event.key === " ") {
-      createBullet();
+      const player = document.querySelector(".player");
+      createBullet(player); // Create bullet if it doesn't exist
+      const bullet = document.querySelector(".bullet");
+      updateBulletPosition(); // Ensure bullet position is updated
       moveBulletUpwards(bullet);
     }
   });
