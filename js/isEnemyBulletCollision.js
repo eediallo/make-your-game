@@ -1,4 +1,5 @@
 import { enemies } from "./createEnemies.js";
+import { playCollision } from "./playSounds.js";
 import { updateScore } from "./updateScore.js";
 
 function isEnemyBulletCollision(bullet) {
@@ -24,6 +25,7 @@ function isEnemyBulletCollision(bullet) {
         enemies.splice(index, 1); // Remove enemy from array
       }
 
+      playCollision();
       updateScore();
       break; // Stop checking for further collisions once one is detected
     }
