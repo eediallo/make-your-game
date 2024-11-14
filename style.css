@@ -27,6 +27,8 @@ p {
 }
 
 .enemy-container {
+    background-image: url("./assets/images/game-background-image.avif");
+    background-size: cover;
     margin: 0 auto;
     max-width: 1300px;
     position: relative;
