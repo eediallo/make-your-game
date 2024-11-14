@@ -6,4 +6,8 @@ const enemyContainerElement = document.querySelector(".enemy-container");
 enemyContainer.applyStyles(enemyContainerElement);
 const newPlayer = new Player(100, 100, 50, 0);
 
-export { enemyContainer, enemyContainerElement, newPlayer };
+function formatUnit(unit) {
+  return unit < 10 ? `0${unit}` : unit;
+}
+
+export { enemyContainer, enemyContainerElement, newPlayer, formatUnit };
