@@ -1,4 +1,5 @@
 import { enemies } from "./createEnemies.js";
+import { updateScore } from "./updateScore.js";
 
 function isEnemyBulletCollision(bullet) {
   const bulletRect = bullet.getBoundingClientRect(); // Get the bullet's current position and size
@@ -22,6 +23,8 @@ function isEnemyBulletCollision(bullet) {
       if (index !== -1) {
         enemies.splice(index, 1); // Remove enemy from array
       }
+
+      updateScore();
       break; // Stop checking for further collisions once one is detected
     }
   }
