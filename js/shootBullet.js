@@ -1,5 +1,6 @@
 import { createBullet, newBullet } from "./createBullet.js";
 import { moveBulletUpwards } from "./moveBulletUpward.js";
+import { playHitBulletSound } from "./playSounds.js";
 import { updateBulletPosition } from "./updateBulletPosition.js";
 
 function shootBullet() {
@@ -10,6 +11,7 @@ function shootBullet() {
       const bullet = document.querySelector(".bullet");
       updateBulletPosition(); // Ensure bullet position is updated
       moveBulletUpwards(bullet);
+      playHitBulletSound();
     }
   });
 }
