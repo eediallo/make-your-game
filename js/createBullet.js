@@ -12,7 +12,7 @@ class Bullet {
   }
 }
 
-const newBullet = new Bullet(20, 20, 20, 0, 0);
+const newBullet = new Bullet(40, 40, 30, 0, 0);
 
 function createBullet(event) {
   if (newBullet.activeBullet) return; // Prevent creating multiple bullets
