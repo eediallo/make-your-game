@@ -14,7 +14,6 @@ function isEnemyBulletCollision(bullet) {
       bulletRect.top + bulletRect.height >= enemyRect.top &&
       bulletRect.top <= enemyRect.top + enemyRect.height
     ) {
-     
       bullet.remove();
       enemyElement.remove(); // Remove enemy DOM element
 
