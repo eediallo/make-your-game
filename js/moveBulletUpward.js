@@ -1,5 +1,5 @@
 import { newBullet } from "./createBullet.js";
-import { isEnemyBulletCollision } from "./playerHitEnemy.js";
+import { isEnemyBulletCollision } from "./isEnemyBulletCollision.js";
 
 // Move the bullet upwards until it reaches the top of the container
 function moveBulletUpwards(bullet) {
