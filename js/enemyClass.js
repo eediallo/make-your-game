@@ -1,11 +1,10 @@
-class Enemy {
-  constructor(width, height, x = 0, y = 0, color = "", direction = "right") {
+export class Enemy {
+  constructor(width, height, x, y, id) {
     this.width = width;
     this.height = height;
     this.x = x;
     this.y = y;
-    this.color = color;
-    this.direction = direction; // Track movement direction
+    this.id = id; // Unique ID
+    this.element = null; // Store reference to DOM element
   }
 }
-export { Enemy };
