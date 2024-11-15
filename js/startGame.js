@@ -12,27 +12,32 @@ function startGame(startGameBtn) {
   document.addEventListener("keydown", movePlayer);
   shootBullet();
 
+  //==========animate====================
   function animate() {
     updateEnemyPositions();
-    if (counter <= maxTime) {
+    if (counter < maxTime) {
       requestAnimationFrame(animate);
     }
   }
   animate();
 
-  // start the game timer
-  let intervalId = setInterval(gameTimeCounter, 1000);
+  //=======================================
 
-  // start the counter in seconds
+  let intervalId = setInterval(gameTimeCounter, 1000); // start the game timer
   startGameBtn.disabled = true;
 
-  setTimeout(() => {
-    clearInterval(intervalId); // Clear the interval locally
+  //=======================handleGameOver========================
+  function handleGameOver(intervalId) {
+    clearInterval(intervalId);
     hidePlayer();
     hideEnemies();
     const gameContainer = document.querySelector(".game-container");
     gameContainer.innerHTML = "<p>Game Over!</p>";
-  }, maxTime * 1000);
+  }
+
+  setTimeout(() => handleGameOver(intervalId), maxTime * 1000);
+
+  //===========================================================
 }
 
 export { startGame };
