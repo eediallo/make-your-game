@@ -27,7 +27,7 @@ function updateEnemyPositions() {
   ) {
     globalDirection = "left";
     activeEnemies.forEach((enemy) => {
-      enemy.y += moveDown; 
+      enemy.y += moveDown;
     });
   } else if (leftmostX <= 0 && globalDirection === "left") {
     globalDirection = "right";
@@ -40,12 +40,15 @@ function updateEnemyPositions() {
   activeEnemies.forEach((enemy) => {
     enemy.x += globalDirection === "right" ? horizontalSpeed : -horizontalSpeed;
 
-    //Update the enemy element’s position in the DOM
-    const enemyElement = enemy.element;
-    if (enemyElement) {
-      enemyElement.style.transform = `translate(${enemy.x}px, ${enemy.y}px)`;
-    }
+    updateEnemyPositionInDOM(enemy);
   });
+}
+
+function updateEnemyPositionInDOM(enemy) {
+  const enemyElement = enemy.element;
+  if (enemyElement) {
+    enemyElement.style.transform = `translate(${enemy.x}px, ${enemy.y}px)`;
+  }
 }
 
 export { updateEnemyPositions };
