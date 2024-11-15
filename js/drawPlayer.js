@@ -12,4 +12,12 @@ function drawPlayer() {
 
   enemyContainerElement.append(playerElement);
 }
-export { drawPlayer };
+
+function hidePlayer() {
+  const player = document.querySelector(".player");
+  if (player) {
+    player.style.display = "none";
+  }
+}
+
+export { drawPlayer, hidePlayer };
