@@ -1,16 +1,18 @@
 import { formatUnit } from "./config.js";
 
-const maxTime = 60;
+const maxTime = 5;
 let counter = 1;
+let intervalId
 
-export function gameTimeCounter() {
-  let intervalId = setInterval(() => {
-    const gameTimeElement = document.querySelector("#game-time");
-    gameTimeElement.textContent = `Time: ${formatUnit(counter)}`;
-    counter++;
-  }, 1000);
+function gameTimeCounter() {
+  const gameTimeElement = document.querySelector("#game-time");
+  if (!gameTimeElement) return; // ensure element exist
+  gameTimeElement.textContent = `Time: ${formatUnit(counter)}`;
+  counter++;
+
   if (counter >= maxTime) {
     clearInterval(intervalId);
-    alert("Game Over!");
   }
 }
+
+export { gameTimeCounter, maxTime, counter };
