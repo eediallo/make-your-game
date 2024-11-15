@@ -1,12 +1,12 @@
 import { enemies } from "./createEnemies.js";
 import { enemyContainerElement } from "./config.js";
 
-let globalDirection = "right"; // Direction of movement (right or left)
-let enemyMoveSpeed = 1; // Speed of horizontal movement
-let enemyDropSpeed = 4; // Speed of vertical drop when changing direction
+let globalDirection = "right";
+let moveDown = 7;
+let horizontalSpeed = 3;
 
 function updateEnemyPositions() {
-  // ----Determine the boundaries of the group of enemies----------
+  //Determine the boundaries of the group of enemies
   let leftmostX = Infinity;
   let rightmostX = -Infinity;
 
@@ -20,27 +20,27 @@ function updateEnemyPositions() {
     if (enemy.x + enemy.width > rightmostX) rightmostX = enemy.x + enemy.width;
   });
 
-  //----------Check if we need to move the entire block down and switch direction-------
+  //Check if we need to move the entire block down and switch direction
   if (
     rightmostX >= enemyContainerElement.clientWidth &&
     globalDirection === "right"
   ) {
     globalDirection = "left";
     activeEnemies.forEach((enemy) => {
-      enemy.y += 4; // Move entire group down by 4px
+      enemy.y += moveDown; 
     });
   } else if (leftmostX <= 0 && globalDirection === "left") {
     globalDirection = "right";
     activeEnemies.forEach((enemy) => {
-      enemy.y += 4; // Move entire group down by 4px
+      enemy.y += moveDown;
     });
   }
 
-  // ----Move each enemy horizontally in the global direction-----------
+  //Move each enemy horizontally in the global direction
   activeEnemies.forEach((enemy) => {
-    enemy.x += globalDirection === "right" ? 1 : -1;
+    enemy.x += globalDirection === "right" ? horizontalSpeed : -horizontalSpeed;
 
-    //----Update the enemy element’s position in the DOM----------------
+    //Update the enemy element’s position in the DOM
     const enemyElement = enemy.element;
     if (enemyElement) {
       enemyElement.style.transform = `translate(${enemy.x}px, ${enemy.y}px)`;
@@ -48,4 +48,4 @@ function updateEnemyPositions() {
   });
 }
 
-export {updateEnemyPositions}
+export { updateEnemyPositions };
