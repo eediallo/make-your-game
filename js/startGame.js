@@ -30,7 +30,7 @@ function startGame(startGameBtn) {
     clearInterval(intervalId); // Clear the interval locally
     hidePlayer();
     hideEnemies();
-    const gameContainer = document.querySelector(".enemy-container");
+    const gameContainer = document.querySelector(".game-container");
     gameContainer.innerHTML = "<p>Game Over!</p>";
   }, maxTime * 1000);
 }

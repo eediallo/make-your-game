@@ -6,7 +6,7 @@ function moveBulletUpwards(bullet) {
   if (!bullet) return; // Ensure bullet is not null
 
   const containerRect = document
-    .querySelector(".enemy-container")
+    .querySelector(".game-container")
     .getBoundingClientRect();
 
   const bulletInterval = setInterval(() => {

@@ -29,7 +29,7 @@ function createBullet(event) {
   // bullet.style.backgroundColor = "red";
   bullet.style.left = `${playerLeft}px`;
   bullet.style.top = `${playerTop}px`;
-  document.querySelector(".enemy-container").appendChild(bullet);
+  document.querySelector(".game-container").appendChild(bullet);
   newBullet.activeBullet = bullet; // Track the active bullet
   updateBulletPosition();
 }
