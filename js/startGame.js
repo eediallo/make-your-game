@@ -1,6 +1,7 @@
 import { drawPlayer, hidePlayer } from "./drawPlayer.js";
 import { movePlayer } from "./movePlayer.js";
-import { updateEnemyPositions, hideEnemies } from "./updateEnemyPosition.js";
+import { updateEnemyPositions } from "./updateEnemyPosition.js";
+import { hideEnemies } from "./hideEnemies.js";
 import { createEnemies } from "./createEnemies.js";
 import { shootBullet } from "./shootBullet.js";
 import { gameTimeCounter, counter, maxTime } from "./updateGameTime.js";
@@ -13,7 +14,7 @@ function startGame(startGameBtn) {
 
   function animate() {
     updateEnemyPositions();
-    if (counter < maxTime) {
+    if (counter <= maxTime) {
       requestAnimationFrame(animate);
     }
   }
@@ -29,7 +30,7 @@ function startGame(startGameBtn) {
     clearInterval(intervalId); // Clear the interval locally
     hidePlayer();
     hideEnemies();
-    const gameContainer = document.getElementById("gameContainer");
+    const gameContainer = document.querySelector(".enemy-container");
     gameContainer.innerHTML = "<p>Game Over!</p>";
   }, maxTime * 1000);
 }
