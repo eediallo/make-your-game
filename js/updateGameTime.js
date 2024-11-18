@@ -2,7 +2,7 @@ import { formatUnit } from "./config.js";
 
 const maxTime = 30;
 let counter = 1;
-let intervalId;
+let gameTimeIntervalId;
 
 function gameTimeCounter() {
   const gameTimeElement = document.querySelector("#game-time");
@@ -11,8 +11,8 @@ function gameTimeCounter() {
   counter++;
 
   if (counter >= maxTime) {
-    clearInterval(intervalId);
+    clearInterval(gameTimeIntervalId);
   }
 }
 
-export { gameTimeCounter, maxTime, counter };
+export { gameTimeCounter, maxTime, counter, gameTimeIntervalId };
