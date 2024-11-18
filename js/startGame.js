@@ -3,7 +3,7 @@ import { movePlayer } from "./movePlayer.js";
 import { createEnemies } from "./createEnemies.js";
 import { shootBullet } from "./shootBullet.js";
 import { gameTimeCounter, maxTime } from "./updateGameTime.js";
-import { animate } from "./animateGame.js";
+import { animate, handleGameOver } from "./animateGame.js";
 
 function startGame(startGameBtn) {
   createEnemies();
