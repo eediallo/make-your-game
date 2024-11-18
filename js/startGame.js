@@ -4,18 +4,25 @@ import { createEnemies } from "./createEnemies.js";
 import { shootBullet } from "./shootBullet.js";
 import { gameTimeCounter, maxTime } from "./updateGameTime.js";
 import { animate, handleGameOver } from "./animateGame.js";
+import { togglePause } from "./togglePause.js";
 
-function startGame(startGameBtn) {
+function startGame(startGameBtn, pauseGameBtn) {
   createEnemies();
   drawPlayer();
   animate();
   document.addEventListener("keydown", movePlayer);
   document.addEventListener("keydown", shootBullet);
 
-  let intervalId = setInterval(gameTimeCounter, 1000); // start the game timer
+  const timerController = {
+    intervalId: setInterval(gameTimeCounter, 1000), // start the game timer
+    isPaused: false,
+  };
+
   startGameBtn.disabled = true;
 
-  setTimeout(() => handleGameOver(intervalId), maxTime * 1000);
+  setTimeout(() => handleGameOver(timerController.intervalId), maxTime * 1000);
+
+  togglePause(pauseGameBtn, timerController);
 }
 
 export { startGame };
