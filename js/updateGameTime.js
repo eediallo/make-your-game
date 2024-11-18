@@ -1,8 +1,8 @@
 import { formatUnit } from "./config.js";
 
-const maxTime = 60;
+const maxTime = 30;
 let counter = 1;
-let intervalId
+let intervalId;
 
 function gameTimeCounter() {
   const gameTimeElement = document.querySelector("#game-time");
