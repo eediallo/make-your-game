@@ -8,8 +8,8 @@ function createEnemies() {
   enemyContainerElement.innerHTML = "";
   enemies.length = 0;
 
-  const enemyWidth = 86;
-  const enemyHeight = 54;
+  const enemyWidth = 50;
+  const enemyHeight = 44;
   const totalRows = 4;
   const totalEnemiesInRow = 11;
   const rowSpacing = 10; // Vertical space between rows
