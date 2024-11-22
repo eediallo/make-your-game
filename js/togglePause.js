@@ -2,6 +2,7 @@ import { movePlayer } from "./movePlayer.js";
 import { animate, stopAnimation } from "./animateGame.js";
 import { gameTimeCounter } from "./updateGameTime.js";
 import { shootBullet } from "./shootBullet.js";
+import { resetGame } from "./resetGame.js";
 
 function togglePause(pauseGameBtn, timerController) {
   document.addEventListener("keydown", (event) => {
@@ -19,9 +20,10 @@ function togglePause(pauseGameBtn, timerController) {
       document.addEventListener("keydown", shootBullet);
       timerController.isPaused = false;
       pauseGameBtn.textContent = "Pause";
+    } else if (event.key === "r") {
+      resetGame(timerController);
     }
   });
 }
-
 
 export { togglePause };
