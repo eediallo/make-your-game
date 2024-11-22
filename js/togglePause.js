@@ -3,11 +3,13 @@ import { animate, stopAnimation } from "./animateGame.js";
 import { gameTimeCounter } from "./updateGameTime.js";
 import { shootBullet } from "./shootBullet.js";
 import { resetGame } from "./resetGame.js";
+import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
 
 function togglePause(pauseGameBtn, timerController) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "p" && !timerController.isPaused) {
       stopAnimation();
+      stopEnemyShooting()
       clearInterval(timerController.intervalId);
       document.removeEventListener("keydown", movePlayer);
       document.removeEventListener("keydown", shootBullet);
@@ -15,6 +17,7 @@ function togglePause(pauseGameBtn, timerController) {
       pauseGameBtn.textContent = "Continue";
     } else if (event.key === "c" && timerController.isPaused) {
       animate();
+      startEnemyShooting()
       timerController.intervalId = setInterval(gameTimeCounter, 1000);
       document.addEventListener("keydown", movePlayer);
       document.addEventListener("keydown", shootBullet);
