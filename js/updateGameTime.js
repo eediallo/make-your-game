@@ -1,6 +1,6 @@
 import { formatUnit } from "./config.js";
 
-const maxTime = 30;
+const maxTime = 60;
 let counter = 1;
 let gameTimeIntervalId;
 
