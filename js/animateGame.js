@@ -1,6 +1,4 @@
 import { counter, maxTime } from "./updateGameTime.js";
-import { hidePlayer } from "./drawPlayer.js";
-import { hideEnemies } from "./hideEnemies.js";
 import { updateEnemyPositions } from "./updateEnemyPosition.js";
 let reqAnim;
 
