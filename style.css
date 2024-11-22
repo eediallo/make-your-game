@@ -1,4 +1,10 @@
-/* General Styles */
+.enemy-bullet {
+    background-image: url("./assets/images/enemy-bullet.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  
 body {
   margin: 0;
   padding: 0;
@@ -103,11 +109,7 @@ header h1 {
   background-repeat: no-repeat;
 }
 
-.enemy-bullet {
-  background-image: url("./assets/images/enemy-bullet.webp");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+
 
 /* Scoreboard */
 #live-score {
