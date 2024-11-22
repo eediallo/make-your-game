@@ -3,24 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Make your game</title>
+    <title>Space Invaders</title>
     <script type="module" src="./main.js" defer></script>
-    <!-- <script type="module" src="./js/playerHitEnemy.js" defer></script> -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <h1>Space Invaders</h1>
     </header>
+
     <div class="game-board">
-      <div>
-        <section id="menu">
-          <h1>Menu</h1>
-          <button class="pause-btn">Pause</button>
-          <button>Restart</button>
-        </section>
-      </div>
       <div class="game-container">
+        <div id="instructions" class="hidden">
+          <h2>How to Play</h2>
+          <ul>
+            <li>
+              <strong>Start:</strong> Click the "Start" button to begin the
+              game.
+            </li>
+            <li>
+              <strong>Pause:</strong> Press the <kbd>P</kbd> key to pause the
+              game.
+            </li>
+            <li>
+              <strong>Continue:</strong> Press the <kbd>C</kbd> key to resume
+              the game after pausing.
+            </li>
+            <li>
+              <strong>Reset:</strong> Press the <kbd>R</kbd> key to restart the
+              game.
+            </li>
+          </ul>
+          <button id="close-instructions-btn">Close Instructions</button>
+        </div>
         <button id="start-game-btn">Start</button>
       </div>
       <div>
