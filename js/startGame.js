@@ -21,7 +21,7 @@ function startGame(startGameBtn) {
 
   startGameBtn.disabled = true;
 
-  setTimeout(() => handleGameOver(timerController.intervalId), maxTime * 1000);
+ setTimeout(() => handleGameOver(timerController.intervalId), maxTime * 1000);
 
   togglePause(timerController);
   startEnemyShooting()
