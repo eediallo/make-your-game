@@ -4,10 +4,11 @@ function movePlayer(event) {
   const player = document.querySelector(".player");
   const playerContainer = document.querySelector(".game-container");
   const step = 10;
-  const playerRect = player.getBoundingClientRect();
-  const playerContainerRect = playerContainer.getBoundingClientRect();
+  if(player){
+    const playerRect = player.getBoundingClientRect();
+    const playerContainerRect = playerContainer.getBoundingClientRect();
 
-  // Move left
+    // Move left
   if (
     event.key === "ArrowLeft" &&
     playerRect.left - step >= playerContainerRect.left
@@ -23,6 +24,7 @@ function movePlayer(event) {
   ) {
     newPlayer.x += step;
     updatePlayerPosition();
+  }
   }
 }
 
