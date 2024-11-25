@@ -10,6 +10,7 @@ function togglePause(timerController) {
     if ((event.key === "p" || event.key === "P" ) && !timerController.isPaused) {
       stopAnimation();
       stopEnemyShooting()
+      clearInterval(timerController.intervalId);
       //============================================================
       const enemyBulletLIst = document.querySelectorAll('.enemy-bullet')
       enemyBulletLIst.forEach(enemyBullet => enemyBullet.remove())
