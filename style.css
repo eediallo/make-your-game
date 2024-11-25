@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Cosmic Alien';  
+  src: url("assets/fonts/BruceForeverRegular-X3jd2.ttf") format("truetype"); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .enemy-bullet {
     background-image: url("./assets/images/enemy-bullet.webp");
     background-size: contain;
@@ -8,12 +16,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Cosmic Alien', sans-serif;
   background-color: #222;
   color: hsl(0, 7%, 83%);
 }
 
 header h1 {
+  margin-top: 20px;
   text-align: center;
   font-size: 48px;
   margin: 20px 0;
