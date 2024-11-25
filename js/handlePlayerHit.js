@@ -1,5 +1,5 @@
 import { newPlayer } from "./config.js";
-import { handleGameOver } from "./animateGame.js";
+import { handleGameOver } from "./handleGameOver.js";
 
 function handlePlayerHit() {
   newPlayer.lives -= 1;
