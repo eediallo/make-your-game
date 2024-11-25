@@ -6,6 +6,15 @@
 }
 
 
+strong{
+  color: hsl(204, 70%, 53%);
+}
+
+kbd{
+  color: hsl(352, 95%, 47%);
+}
+
+
 .enemy-bullet {
     background-image: url("./assets/images/enemy-bullet.webp");
     background-size: contain;
@@ -126,7 +135,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(204, 76%, 38%);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
