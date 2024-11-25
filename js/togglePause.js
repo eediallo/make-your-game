@@ -3,6 +3,7 @@ import { animate, stopAnimation } from "./animateGame.js";
 import { gameTimeCounter } from "./updateGameTime.js";
 import { shootBullet } from "./shootBullet.js";
 import { resetGame } from "./resetGame.js";
+import { newBullet } from "./createBullet.js";
 import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
 
 function togglePause(pauseGameBtn, timerController) {
@@ -10,11 +11,13 @@ function togglePause(pauseGameBtn, timerController) {
     if (event.key === "p" && !timerController.isPaused) {
       stopAnimation();
       stopEnemyShooting()
-      clearInterval(timerController.intervalId);
+      //============================================================
+      const enemyBulletLIst = document.querySelectorAll('.enemy-bullet')
+      enemyBulletLIst.forEach(enemyBullet => enemyBullet.remove())
+      //============================================================
       document.removeEventListener("keydown", movePlayer);
       document.removeEventListener("keydown", shootBullet);
       timerController.isPaused = true;
-      pauseGameBtn.textContent = "Continue";
     } else if (event.key === "c" && timerController.isPaused) {
       animate();
       startEnemyShooting()
@@ -22,7 +25,6 @@ function togglePause(pauseGameBtn, timerController) {
       document.addEventListener("keydown", movePlayer);
       document.addEventListener("keydown", shootBullet);
       timerController.isPaused = false;
-      pauseGameBtn.textContent = "Pause";
     } else if (event.key === "r") {
       resetGame(timerController);
     }
