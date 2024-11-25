@@ -8,11 +8,12 @@ function gameTimeCounter() {
   const gameTimeElement = document.querySelector("#game-time");
   if (!gameTimeElement) return; // ensure element exist
   gameTimeElement.textContent = `Time: ${formatUnit(counter)}`;
-  counter++;
-
+  counter++
   if (counter >= maxTime) {
     clearInterval(gameTimeIntervalId);
   }
 }
 
-export { gameTimeCounter, maxTime, counter, gameTimeIntervalId };
+const resetCounter = () => counter = 0
+
+export { gameTimeCounter, maxTime, counter, gameTimeIntervalId, resetCounter };
