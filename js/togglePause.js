@@ -6,7 +6,7 @@ import { resetGame } from "./resetGame.js";
 import { newBullet } from "./createBullet.js";
 import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
 
-function togglePause(pauseGameBtn, timerController) {
+function togglePause(timerController) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "p" && !timerController.isPaused) {
       stopAnimation();

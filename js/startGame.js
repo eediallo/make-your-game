@@ -7,7 +7,7 @@ import { animate, handleGameOver } from "./animateGame.js";
 import { togglePause } from "./togglePause.js";
 import { startEnemyShooting } from "./startEnemyShooting.js";
 
-function startGame(startGameBtn, pauseGameBtn) {
+function startGame(startGameBtn) {
   createEnemies();
   drawPlayer();
   animate();
@@ -23,7 +23,7 @@ function startGame(startGameBtn, pauseGameBtn) {
 
   setTimeout(() => handleGameOver(timerController.intervalId), maxTime * 1000);
 
-  togglePause(pauseGameBtn, timerController);
+  togglePause(timerController);
   startEnemyShooting()
 }
 
