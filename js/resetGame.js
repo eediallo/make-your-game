@@ -1,40 +1,36 @@
-import { animate, stopAnimation } from "./animateGame.js";
-import { gameTimeCounter, counter } from "./updateGameTime.js";
-import { movePlayer } from "./movePlayer.js";
-import { shootBullet } from "./shootBullet.js";
+import { newPlayer } from "./config.js";
 import { createEnemies } from "./createEnemies.js";
 import { drawPlayer } from "./drawPlayer.js";
-import { newPlayer } from "./config.js";
-import { newBullet } from "./createBullet.js";
-import { stopEnemyShooting } from "./startEnemyShooting.js";
+import { animate } from "./animateGame.js";
+import { gameTimeCounter, resetCounter } from "./updateGameTime.js";
+import { startEnemyShooting } from "./startEnemyShooting.js";
+import { resetScore } from "./updateScore.js";
 
 function resetGame(timerController) {
   // Reset game state
   newPlayer.x = 50;
   newPlayer.y = 0;
-  newBullet.activeBullet = null;
+  newPlayer.lives = 10;
   document.querySelector("#score").textContent = "Score: 0";
   document.querySelector("#game-time").textContent = "Time: 00";
   document.querySelector("#lives").textContent = "Lives: 10";
-  newPlayer.lives = 10;
 
+  // Reset timer
+  clearInterval(timerController.intervalId);
+  resetCounter()
+  timerController.intervalId = setInterval(gameTimeCounter, 1000);
 
-  const gameContainer = document.querySelector(".game-container");
-  gameContainer.innerHTML = "";
+  resetScore()
 
-
+  // Reinitialize enemies and player
   createEnemies();
   drawPlayer();
 
-  // Stop any ongoing animations and intervals
-  stopAnimation();
-  clearInterval(timerController.intervalId);
-  stopEnemyShooting();
-
-  // Restart the game
-  timerController.isPaused = false;
-  timerController.intervalId = setInterval(gameTimeCounter, 1000);
+  // Restart game animation and enemy shooting
   animate();
+  startEnemyShooting();
+
+  // Re-enable player controls
   document.addEventListener("keydown", movePlayer);
   document.addEventListener("keydown", shootBullet);
 }
