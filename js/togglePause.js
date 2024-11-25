@@ -3,7 +3,6 @@ import { animate, stopAnimation } from "./animateGame.js";
 import { gameTimeCounter } from "./updateGameTime.js";
 import { shootBullet } from "./shootBullet.js";
 import { resetGame } from "./resetGame.js";
-import { newBullet } from "./createBullet.js";
 import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
 
 function togglePause(timerController) {
