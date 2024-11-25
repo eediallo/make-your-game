@@ -7,7 +7,7 @@ import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
 
 function togglePause(timerController) {
   document.addEventListener("keydown", (event) => {
-    if (event.key === "p" && !timerController.isPaused) {
+    if ((event.key === "p" || event.key === "P" ) && !timerController.isPaused) {
       stopAnimation();
       stopEnemyShooting()
       //============================================================
@@ -17,14 +17,14 @@ function togglePause(timerController) {
       document.removeEventListener("keydown", movePlayer);
       document.removeEventListener("keydown", shootBullet);
       timerController.isPaused = true;
-    } else if (event.key === "c" && timerController.isPaused) {
+    } else if ((event.key === "c" || event.key === "C") && timerController.isPaused) {
       animate();
       startEnemyShooting()
       timerController.intervalId = setInterval(gameTimeCounter, 1000);
       document.addEventListener("keydown", movePlayer);
       document.addEventListener("keydown", shootBullet);
       timerController.isPaused = false;
-    } else if (event.key === "r") {
+    } else if (event.key === "r" || event.key === "R") {
       resetGame(timerController);
     }
   });
