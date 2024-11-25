@@ -10,7 +10,6 @@ import { stopEnemyShooting } from "./startEnemyShooting.js";
 
 function resetGame(timerController) {
   // Reset game state
-  counter = 1;
   newPlayer.x = 50;
   newPlayer.y = 0;
   newBullet.activeBullet = null;
