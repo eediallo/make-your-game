@@ -2,7 +2,7 @@ import { newPlayer } from "./config.js";
 import { createEnemies } from "./createEnemies.js";
 import { drawPlayer } from "./drawPlayer.js";
 import { animate } from "./animateGame.js";
-import { gameTimeCounter, resetCounter, setTimerController } from "./updateGameTime.js";
+import { gameTimeCounter, resetCounter, setTimerController, counter } from "./updateGameTime.js";
 import { startEnemyShooting } from "./startEnemyShooting.js";
 import { resetScore } from "./updateScore.js";
 import { movePlayer } from "./movePlayer.js";
