@@ -9,18 +9,18 @@ function togglePause(timerController) {
   document.addEventListener("keydown", (event) => {
     if ((event.key === "p" || event.key === "P" ) && !timerController.isPaused) {
       stopAnimation();
-      stopEnemyShooting()
+      stopEnemyShooting();
       clearInterval(timerController.intervalId);
       //============================================================
-      const enemyBulletLIst = document.querySelectorAll('.enemy-bullet')
-      enemyBulletLIst.forEach(enemyBullet => enemyBullet.remove())
+      const enemyBulletLIst = document.querySelectorAll('.enemy-bullet');
+      enemyBulletLIst.forEach(enemyBullet => enemyBullet.remove());
       //============================================================
       document.removeEventListener("keydown", movePlayer);
       document.removeEventListener("keydown", shootBullet);
       timerController.isPaused = true;
     } else if ((event.key === "c" || event.key === "C") && timerController.isPaused) {
       animate();
-      startEnemyShooting()
+      startEnemyShooting();
       timerController.intervalId = setInterval(gameTimeCounter, 1000);
       document.addEventListener("keydown", movePlayer);
       document.addEventListener("keydown", shootBullet);
