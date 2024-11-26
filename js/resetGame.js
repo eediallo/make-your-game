@@ -19,7 +19,6 @@ function resetGame(timerController) {
   document.querySelector("#score").textContent = "Score: 0";
   document.querySelector("#game-time").textContent = "Time: 00";
   document.querySelector("#lives").textContent = "Lives: 10";
-
   // Reset timer
   clearInterval(timerController.intervalId);
   resetCounter();

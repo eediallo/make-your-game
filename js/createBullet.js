@@ -18,20 +18,22 @@ function createBullet(event) {
   if (newBullet.activeBullet) return; // Prevent creating multiple bullets
 
   const player = document.querySelector(".player");
-  const playerLeft =
-    player.offsetLeft + player.offsetWidth / 2 - newBullet.width / 2;
-  const playerTop = player.offsetTop;
-  const bullet = document.createElement("div");
-  bullet.classList.add("bullet");
-  bullet.style.width = `${newBullet.width}px`;
-  bullet.style.height = `${newBullet.height}px`;
-  bullet.style.position = "absolute";
-  // bullet.style.backgroundColor = "red";
-  bullet.style.left = `${playerLeft}px`;
-  bullet.style.top = `${playerTop}px`;
-  document.querySelector(".game-container").appendChild(bullet);
-  newBullet.activeBullet = bullet; // Track the active bullet
-  updateBulletPosition();
+  if (player){
+    const playerLeft =
+      player.offsetLeft + player.offsetWidth / 2 - newBullet.width / 2;
+    const playerTop = player.offsetTop;
+    const bullet = document.createElement("div");
+    bullet.classList.add("bullet");
+    bullet.style.width = `${newBullet.width}px`;
+    bullet.style.height = `${newBullet.height}px`;
+    bullet.style.position = "absolute";
+    // bullet.style.backgroundColor = "red";
+    bullet.style.left = `${playerLeft}px`;
+    bullet.style.top = `${playerTop}px`;
+    document.querySelector(".game-container").appendChild(bullet);
+    newBullet.activeBullet = bullet; // Track the active bullet
+    updateBulletPosition();
+  }
 }
 
 export { createBullet, newBullet };
