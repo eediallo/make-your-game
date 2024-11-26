@@ -5,8 +5,10 @@ import { stopEnemyShooting } from "./startEnemyShooting.js";
 import { resetGame } from "./resetGame.js";
 import { gameTimeCounter } from "./updateGameTime.js";
 
-function handleGameOver(intervalId) {
-  clearInterval(intervalId);
+function handleGameOver(timerController) {
+  if (timerController.isPaused) return; // Do not proceed if the game is paused
+
+  clearInterval(timerController.intervalId);
   stopAnimation();
   stopEnemyShooting();
   hidePlayer();
@@ -45,11 +47,11 @@ function handleGameOver(intervalId) {
 
   // Add event listener for "Play Again" button
   document.getElementById("play-again-btn").addEventListener("click", () => {
-    const timerController = {
+    const newTimerController = {
       intervalId: setInterval(gameTimeCounter, 1000),
       isPaused: false,
     };
-    resetGame(timerController);
+    resetGame(newTimerController);
   });
 }
 
