@@ -15,15 +15,13 @@ function togglePause(timerController) {
       clearInterval(timerController.intervalId);
       removeEnemyBullet()
       createAndDisplayPausedMenu()
-      document.removeEventListener("keydown", movePlayer);
-      document.removeEventListener("keydown", shootBullet);
+      removeEventListers()
       timerController.isPaused = true;
     } else if ((event.key === "c" || event.key === "C") && timerController.isPaused) {
       animate();
       startEnemyShooting(timerController);
       timerController.intervalId = setInterval(gameTimeCounter, 1000);
-      document.addEventListener("keydown", movePlayer);
-      document.addEventListener("keydown", shootBullet);
+      addEventListener()
       timerController.isPaused = false;
 
     removePauseMenu()
@@ -34,10 +32,23 @@ function togglePause(timerController) {
         isPaused: false,
       };
       resetGame(newTimerController);
-
+       // Update the timerController reference
+       timerController.intervalId = newTimerController.intervalId;
+       timerController.isPaused = newTimerController.isPaused;
+ 
      removePauseMenu()
     }
   });
+}
+
+function removeEventListers(){
+  document.removeEventListener("keydown", movePlayer);
+  document.removeEventListener("keydown", shootBullet);
+}
+
+function addEventListener(){
+  document.addEventListener("keydown", movePlayer);
+  document.addEventListener("keydown", shootBullet);
 }
 
 
