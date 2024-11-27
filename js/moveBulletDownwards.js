@@ -1,6 +1,6 @@
 import { checkPlayerBulletCollision } from "./checkPlayerBulletCollision.js";
 
-function moveBulletDownwards(bullet) {
+function moveBulletDownwards(bullet, timerController) {
   const containerRect = document.querySelector(".game-container").getBoundingClientRect();
 
   const bulletInterval = setInterval(() => {
@@ -13,7 +13,7 @@ function moveBulletDownwards(bullet) {
       bullet.style.top = `${parseFloat(bullet.style.top) + 5}px`; // Adjust speed as needed
     }
 
-    checkPlayerBulletCollision(bullet);
+    checkPlayerBulletCollision(bullet, timerController);
   }, 20);
 }
 

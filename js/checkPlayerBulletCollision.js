@@ -1,6 +1,6 @@
 import { handlePlayerHit } from "./handlePlayerHit.js";
 
-function checkPlayerBulletCollision(bullet) {
+function checkPlayerBulletCollision(bullet, timerController) {
   const player = document.querySelector(".player");
   if(player){
     const playerRect = player.getBoundingClientRect();
@@ -12,11 +12,9 @@ function checkPlayerBulletCollision(bullet) {
       bulletRect.bottom > playerRect.top
     ) {
       bullet.remove();
-      handlePlayerHit();
+      handlePlayerHit(timerController);
     }
   }
-
- 
 }
 
 export { checkPlayerBulletCollision };

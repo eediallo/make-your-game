@@ -1,7 +1,7 @@
 import { newBullet } from "./createBullet.js";
 import { moveBulletDownwards } from "./moveBulletDownwards.js";
 
-function createEnemyBullet() {
+function createEnemyBullet(timerController) {
   const gameContainer = document.querySelector(".game-container");
   const containerRect = gameContainer.getBoundingClientRect();
 
@@ -14,7 +14,7 @@ function createEnemyBullet() {
   bullet.style.top = `0px`; // Start from the top of the game container
   gameContainer.appendChild(bullet);
 
-  moveBulletDownwards(bullet);
+  moveBulletDownwards(bullet, timerController);
 }
 
 export { createEnemyBullet };

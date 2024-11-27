@@ -20,7 +20,7 @@ function togglePause(timerController) {
       timerController.isPaused = true;
     } else if ((event.key === "c" || event.key === "C") && timerController.isPaused) {
       animate();
-      startEnemyShooting();
+      startEnemyShooting(timerController);
       timerController.intervalId = setInterval(gameTimeCounter, 1000);
       document.addEventListener("keydown", movePlayer);
       document.addEventListener("keydown", shootBullet);

@@ -1,12 +1,13 @@
 import { newPlayer } from "./config.js";
 import { handleGameOver } from "./handleGameOver.js";
 
-function handlePlayerHit() {
+function handlePlayerHit(timerController) {
   newPlayer.lives -= 1;
   updateLivesDisplay();
 
   if (newPlayer.lives <= 0) {
-    handleGameOver();
+    console.log('game over')
+    handleGameOver(timerController);
   }
 }
 

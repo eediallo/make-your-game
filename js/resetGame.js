@@ -15,7 +15,7 @@ function resetGame(timerController) {
   // Reset game state
   newPlayer.x = 50;
   newPlayer.y = 0;
-  newPlayer.lives = 10;
+  newPlayer.lives = 5;
   document.querySelector("#score").textContent = "Score: 0";
   document.querySelector("#game-time").textContent = "Time: 00";
   document.querySelector("#lives").textContent = "Lives: 10";
@@ -38,7 +38,7 @@ function resetGame(timerController) {
 
   // Restart game animation and enemy shooting
   animate();
-  startEnemyShooting();
+  startEnemyShooting(timerController);
 
   // Re-enable player controls
   document.addEventListener("keydown", movePlayer);

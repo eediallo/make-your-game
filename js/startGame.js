@@ -4,7 +4,6 @@ import { createEnemies } from "./createEnemies.js";
 import { shootBullet } from "./shootBullet.js";
 import { gameTimeCounter, setTimerController } from "./updateGameTime.js";
 import { animate } from "./animateGame.js";
-import { handleGameOver } from "./handleGameOver.js";
 import { togglePause } from "./togglePause.js";
 import { startEnemyShooting } from "./startEnemyShooting.js";
 
@@ -25,7 +24,7 @@ function startGame(startGameBtn) {
   startGameBtn.disabled = true;
 
   togglePause(timerController);
-  startEnemyShooting();
+  startEnemyShooting(timerController);
 }
 
 export { startGame };
