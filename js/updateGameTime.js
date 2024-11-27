@@ -1,6 +1,7 @@
+import { handleGameOver } from "./handleGameOver.js";
+
 const maxTime = 30;
 let counter = 1;
-let gameTimeIntervalId;
 let timerController;
 
 function gameTimeCounter() {
@@ -8,6 +9,11 @@ function gameTimeCounter() {
   counter++;
   const gameTimeElement = document.querySelector("#game-time");
   gameTimeElement.textContent = `Time: ${counter}`;
+
+  if (counter >= maxTime) {
+    clearInterval(timerController.intervalId);
+    handleGameOver(timerController); // Call handleGameOver when time is up
+  }
 }
 
 const resetCounter = () => {
@@ -20,4 +26,4 @@ function setTimerController(controller) {
   timerController = controller;
 }
 
-export { gameTimeCounter, maxTime, counter, gameTimeIntervalId, resetCounter, setTimerController };
+export { gameTimeCounter, maxTime, counter, resetCounter, setTimerController };
