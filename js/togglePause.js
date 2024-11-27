@@ -1,11 +1,10 @@
 import { animate, stopAnimation } from "./animateGame.js";
 import { gameTimeCounter } from "./updateGameTime.js";
-import { shootBullet } from "./shootBullet.js";
 import { resetGame } from "./resetGame.js";
 import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
 import { createAndDisplayPausedMenu, removePauseMenu } from "./createAndDisplayPausedMenu.js";
-import { movePlayer } from "./movePlayer.js";
 import { removeEnemyBullet } from "./createEnemyBullet.js";
+import { addMovePlayerAndShootBulletEvents, RemoveMovePlayerAndShootBulletEvents } from "./addAndRemoveEvents.js";
 
 function togglePause(timerController) {
   document.addEventListener("keydown", (event) => {
@@ -15,13 +14,13 @@ function togglePause(timerController) {
       clearInterval(timerController.intervalId);
       removeEnemyBullet()
       createAndDisplayPausedMenu()
-      removeEventListers()
+      RemoveMovePlayerAndShootBulletEvents()
       timerController.isPaused = true;
     } else if ((event.key === "c" || event.key === "C") && timerController.isPaused) {
       animate();
       startEnemyShooting(timerController);
       timerController.intervalId = setInterval(gameTimeCounter, 1000);
-      addEventListener()
+      addMovePlayerAndShootBulletEvents()
       timerController.isPaused = false;
 
     removePauseMenu()
@@ -40,16 +39,4 @@ function togglePause(timerController) {
     }
   });
 }
-
-function removeEventListers(){
-  document.removeEventListener("keydown", movePlayer);
-  document.removeEventListener("keydown", shootBullet);
-}
-
-function addEventListener(){
-  document.addEventListener("keydown", movePlayer);
-  document.addEventListener("keydown", shootBullet);
-}
-
-
 export { togglePause };
