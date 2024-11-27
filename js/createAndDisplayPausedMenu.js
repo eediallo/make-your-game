@@ -19,4 +19,12 @@ function createAndDisplayPausedMenu(){
       document.body.appendChild(pauseMenu);
 }
 
-export {createAndDisplayPausedMenu}
+
+function removePauseMenu(){
+     const pauseMenu = document.getElementById('pause-menu');
+     if (pauseMenu) {
+       pauseMenu.remove();
+     }
+}
+
+export {createAndDisplayPausedMenu,  removePauseMenu}
