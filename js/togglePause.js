@@ -1,9 +1,10 @@
-import { movePlayer } from "./movePlayer.js";
 import { animate, stopAnimation } from "./animateGame.js";
 import { gameTimeCounter } from "./updateGameTime.js";
 import { shootBullet } from "./shootBullet.js";
 import { resetGame } from "./resetGame.js";
 import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
+import { createAndDisplayPausedMenu } from "./createAndDisplayPausedMenu.js";
+import { movePlayer } from "./movePlayer.js";
 
 function togglePause(timerController) {
   document.addEventListener("keydown", (event) => {
@@ -11,13 +12,16 @@ function togglePause(timerController) {
       stopAnimation();
       stopEnemyShooting();
       clearInterval(timerController.intervalId);
-      //============================================================
-      const enemyBulletLIst = document.querySelectorAll('.enemy-bullet');
-      enemyBulletLIst.forEach(enemyBullet => enemyBullet.remove());
-      //============================================================
+
+      //===============remove enemy bullet ==================
+      const enemyBulletList = document.querySelectorAll('.enemy-bullet');
+      enemyBulletList.forEach(enemyBullet => enemyBullet.remove());
+      //================================================================
       document.removeEventListener("keydown", movePlayer);
       document.removeEventListener("keydown", shootBullet);
+      createAndDisplayPausedMenu()
       timerController.isPaused = true;
+  
     } else if ((event.key === "c" || event.key === "C") && timerController.isPaused) {
       animate();
       startEnemyShooting(timerController);
@@ -25,8 +29,25 @@ function togglePause(timerController) {
       document.addEventListener("keydown", movePlayer);
       document.addEventListener("keydown", shootBullet);
       timerController.isPaused = false;
+
+      // Remove the pause menu
+      const pauseMenu = document.getElementById('pause-menu');
+      if (pauseMenu) {
+        pauseMenu.remove();
+      }
     } else if (event.key === "r" || event.key === "R") {
-      resetGame(timerController);
+      // Re-initialize the timerController
+      const newTimerController = {
+        intervalId: setInterval(gameTimeCounter, 1000),
+        isPaused: false,
+      };
+      resetGame(newTimerController);
+
+      // Remove the pause menu
+      const pauseMenu = document.getElementById('pause-menu');
+      if (pauseMenu) {
+        pauseMenu.remove();
+      }
     }
   });
 }
