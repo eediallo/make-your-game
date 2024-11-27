@@ -7,8 +7,6 @@ import { gameTimeCounter } from "./updateGameTime.js";
 
 function handleGameOver(timerController) {
   if (!timerController ||timerController.isPaused) return; // Do not proceed if the game is paused
-
-  console.log("Game over triggered.");
   clearInterval(timerController.intervalId);
   stopAnimation();
   stopEnemyShooting();
