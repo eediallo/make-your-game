@@ -6,7 +6,6 @@ function handlePlayerHit(timerController) {
   updateLivesDisplay();
 
   if (newPlayer.lives <= 0) {
-    console.log('game over')
     handleGameOver(timerController);
   }
 }
