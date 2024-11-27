@@ -3,11 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Make your game</title>
-    <script type="module" src="main.js" defer></script>
+    <title>Space Invaders</title>
+    <script type="module" src="./main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container"></div>
+    <header>
+      <h1>Space Invaders</h1>
+    </header>
+
+    <div class="game-board">
+      <div>
+        <section id="score-board">
+          <h1>Score Board</h1>
+          <div id="live-score">
+            <p id="game-time">Time: 00</p>
+            <p id="score">Score: 00</p>
+            <p id="lives">Lives: 3</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="game-container">
+        <div id="instructions" class="hidden">
+          <h2>How to Play</h2>
+          <ul>
+            <li>
+              <strong>Start:</strong> Click the "Start" button to begin the
+              game.
+            </li>
+            <li>
+              <strong>Pause:</strong> Press the <kbd>P</kbd> key to pause the
+              game.
+            </li>
+            <li>
+              <strong>Continue:</strong> Press the <kbd>C</kbd> key to resume
+              the game after pausing.
+            </li>
+            <li>
+              <strong>Reset:</strong> Press the <kbd>R</kbd> key to restart the
+              game.
+            </li>
+
+            <li>
+              <strong>Move Left:</strong> Press the <kbd>←</kbd> key to move the player Left.
+            </li>
+            <li>
+              <strong>Move Right:</strong> Press the <kbd>→</kbd> key to move the player Right.
+            </li>
+
+            <li>
+              <strong>Shoot:</strong> Press the <kbd>Space</kbd> key to shoot the enemies.
+            </li>
+          </ul>
+          <button id="close-instructions-btn">Close Instructions</button>
+        </div>
+        <button id="start-game-btn">Start</button>
+      </div>
+    
+    </div>
   </body>
 </html>
