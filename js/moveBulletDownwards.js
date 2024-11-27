@@ -11,7 +11,7 @@ function moveBulletDownwards(bullet, timerController) {
       bullet.remove();
       clearInterval(bulletInterval);
     } else {
-      bullet.style.top = `${parseFloat(bullet.style.top) + newBullet.bulletSpeed}px`; // Adjust speed as needed
+      bullet.style.top = `${parseFloat(bullet.style.top) + newBullet.bulletSpeed}px`;
     }
 
     checkPlayerBulletCollision(bullet, timerController);
