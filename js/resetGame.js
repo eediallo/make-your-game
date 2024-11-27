@@ -17,10 +17,10 @@ function resetGame(timerController) {
   // Reset game state
   newPlayer.x = 50;
   newPlayer.y = 0;
-  newPlayer.lives = 5;
+  newPlayer.lives = 3;
   document.querySelector("#score").textContent = "Score: 0";
   document.querySelector("#game-time").textContent = "Time: 00";
-  document.querySelector("#lives").textContent = "Lives: 5";
+  document.querySelector("#lives").textContent = "Lives: 3";
 
   // Reset timer
   clearInterval(timerController.intervalId);
