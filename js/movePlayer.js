@@ -3,7 +3,7 @@ import { updateBulletPosition } from "./updateBulletPosition.js";
 function movePlayer(event) {
   const player = document.querySelector(".player");
   const playerContainer = document.querySelector(".game-container");
-  const step = 10;
+  const step = 30;
   if(player){
     const playerRect = player.getBoundingClientRect();
     const playerContainerRect = playerContainer.getBoundingClientRect();
