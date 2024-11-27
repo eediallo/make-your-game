@@ -5,6 +5,7 @@ import { resetGame } from "./resetGame.js";
 import { startEnemyShooting, stopEnemyShooting } from "./startEnemyShooting.js";
 import { createAndDisplayPausedMenu, removePauseMenu } from "./createAndDisplayPausedMenu.js";
 import { movePlayer } from "./movePlayer.js";
+import { removeEnemyBullet } from "./createEnemyBullet.js";
 
 function togglePause(timerController) {
   document.addEventListener("keydown", (event) => {
@@ -12,16 +13,11 @@ function togglePause(timerController) {
       stopAnimation();
       stopEnemyShooting();
       clearInterval(timerController.intervalId);
-
-      //===============remove enemy bullet ==================
-      const enemyBulletList = document.querySelectorAll('.enemy-bullet');
-      enemyBulletList.forEach(enemyBullet => enemyBullet.remove());
-      //================================================================
+      removeEnemyBullet()
+      createAndDisplayPausedMenu()
       document.removeEventListener("keydown", movePlayer);
       document.removeEventListener("keydown", shootBullet);
-      createAndDisplayPausedMenu()
       timerController.isPaused = true;
-  
     } else if ((event.key === "c" || event.key === "C") && timerController.isPaused) {
       animate();
       startEnemyShooting(timerController);

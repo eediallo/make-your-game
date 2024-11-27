@@ -17,4 +17,9 @@ function createEnemyBullet(timerController) {
   moveBulletDownwards(bullet, timerController);
 }
 
-export { createEnemyBullet };
+function removeEnemyBullet(){
+  const enemyBulletList = document.querySelectorAll('.enemy-bullet');
+  enemyBulletList.forEach(enemyBullet => enemyBullet.remove());
+}
+
+export { createEnemyBullet, removeEnemyBullet };
