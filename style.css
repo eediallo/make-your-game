@@ -157,7 +157,7 @@ header h1 {
 }
 
 /* Start Game Button */
-#start-game-btn {
+#start-game-btn{
   display: block;
   width: 150px;
   padding: 15px 20px;
@@ -173,6 +173,18 @@ header h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#play-again-btn{
+  width: 150px;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: hsl(204, 70%, 53%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 #start-game-btn:hover {
