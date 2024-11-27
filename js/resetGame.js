@@ -2,11 +2,14 @@ import { newPlayer } from "./config.js";
 import { createEnemies } from "./createEnemies.js";
 import { drawPlayer } from "./drawPlayer.js";
 import { animate } from "./animateGame.js";
-import { gameTimeCounter, resetCounter, setTimerController } from "./updateGameTime.js";
+import {
+  gameTimeCounter,
+  resetCounter,
+  setTimerController,
+} from "./updateGameTime.js";
 import { startEnemyShooting } from "./startEnemyShooting.js";
 import { resetScore } from "./updateScore.js";
-import { movePlayer } from "./movePlayer.js";
-import { shootBullet } from "./shootBullet.js";
+import { addMovePlayerAndShootBulletEvents } from "./addAndRemoveEvents.js";
 
 function resetGame(timerController) {
   if (timerController.isPaused) return; // Do not update the counter if the game is paused
@@ -37,8 +40,7 @@ function resetGame(timerController) {
   startEnemyShooting(timerController);
 
   // Re-enable player controls
-  document.addEventListener("keydown", movePlayer);
-  document.addEventListener("keydown", shootBullet);
+  addMovePlayerAndShootBulletEvents();
 
   // Set the timer controller
   setTimerController(timerController);
